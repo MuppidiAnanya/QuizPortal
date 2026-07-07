@@ -28,7 +28,7 @@ def download_quiz_report(user_id):
 @shared_task(ignore_results = False, name = "quiz_reminder")
 def quiz_reminder(username):
     msg = f"Hello Users, a new Quiz has been added by the {username}! Please check the app at http://127.0.0.1:5000/#/login "
-    response = requests.post("https://chat.googleapis.com/v1/spaces/AAQALx6CfTs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=SF_0MEuh05Ia-lPv3aBkDeHvzx49p8qmTy5_mOqqug8",headers={'Content-type':'application/json'},json={"text":msg})
+    response = requests.post("https://chat.googleapis.com",headers={'Content-type':'application/json'},json={"text":msg})
     return "Update has been sent to user"
 
 
