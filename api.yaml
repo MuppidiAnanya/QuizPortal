@@ -1,0 +1,109 @@
+info:
+  title: Quiz Master API
+  description: API for managing subjects, chapters, quizzes, and questions
+  version: 1.0.0
+
+paths:
+  /subjects:
+    get:
+      summary: Get subjects
+      responses:
+        '200':
+          description: List of subjects
+    post:
+      summary: Create a new subject
+      responses:
+        '201':
+          description: Subject created
+
+  /subjects/{id}:
+    put:
+      summary: Update a subject
+      responses:
+        '200':
+          description: Subject updated
+    delete:
+      summary: Delete a subject
+      responses:
+        '200':
+          description: Subject deleted
+
+  /subjects/{subject_id}/chapters:
+    get:
+      summary: Get chapters for a subject
+      responses:
+        '200':
+          description: List of chapters
+    post:
+      summary: Create a chapter
+      responses:
+        '201':
+          description: Chapter created
+
+  /chapters/{chapter_id}:
+    put:
+      summary: Update a chapter
+      responses:
+        '200':
+          description: Chapter updated
+    delete:
+      summary: Delete a chapter
+      responses:
+        '200':
+          description: Chapter deleted
+
+  /admin/quiz:
+    get:
+      summary: Get quizzes
+      responses:
+        '200':
+          description: List of quizzes
+    post:
+      summary: Create a quiz
+      responses:
+        '201':
+          description: Quiz created
+
+  /admin/quiz/{quiz_id}:
+    put:
+      summary: Update a quiz
+      responses:
+        '200':
+          description: Quiz updated
+    delete:
+      summary: Delete a quiz
+      responses:
+        '200':
+          description: Quiz deleted
+
+  /admin/quiz/{quiz_id}/questions:
+    get:
+      summary: Get questions for a quiz
+      responses:
+        '200':
+          description: List of questions
+    post:
+      summary: Add a question to a quiz
+      responses:
+        '201':
+          description: Question added
+
+  /admin/question/{question_id}:
+    put:
+      summary: Update a question
+      responses:
+        '200':
+          description: Question updated
+    delete:
+      summary: Delete a question
+      responses:
+        '200':
+          description: Question deleted
+
+  /quiz/{quiz_id}/details:
+    get:
+      summary: Get quiz details
+      responses:
+        '200':
+          description: Quiz details
+
